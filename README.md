@@ -1,4 +1,4 @@
-# FizzerYu's Blog
+# [FizzerYu's Blog](FizzerYu.github.io)
 ***basing on [Hexo](https://hexo.io/)***
 
 ### Create a new post
