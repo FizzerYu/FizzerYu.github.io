@@ -241,7 +241,7 @@ height:50vh;
     <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/deeplearning.png)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
@@ -266,15 +266,15 @@ height:50vh;
                 
                     <div class= post-intro-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "论文阅读">论文阅读</a>
-    
         <a class="post-tag" href="javascript:void(0);" data-tags = "Deep Learning">Deep Learning</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "论文阅读">论文阅读</a>
     
 </div>
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">478</span>Reading time: <span class="post-count reading-time">2 min</span></span>
+                        <span>Word count: <span class="post-count word-count">676</span>Reading time: <span class="post-count reading-time">3 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -403,14 +403,14 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h2 id="深度学习前夜的里程碑⭐⭐⭐⭐⭐"><a href="#深度学习前夜的里程碑⭐⭐⭐⭐⭐" class="headerlink" title="深度学习前夜的里程碑⭐⭐⭐⭐⭐"></a>深度学习前夜的里程碑⭐⭐⭐⭐⭐</h2><blockquote>
+        <h2 id="1-1-Deep-Learning-Report"><a href="#1-1-Deep-Learning-Report" class="headerlink" title="1.1 Deep Learning Report"></a>1.1 Deep Learning Report</h2><blockquote>
 <p>Hinton, Geoffrey E., Simon Osindero, and Yee-Whye Teh. “A fast learning algorithm for deep belief nets.” Neural computation 18.7 (2006): 1527-1554.<br><a href="http://www.cs.toronto.edu/%7Ehinton/absps/ncfast.pdf" target="_blank" rel="noopener">http://www.cs.toronto.edu/%7Ehinton/absps/ncfast.pdf</a><br><a href="https://www.nature.com/articles/nature14539" target="_blank" rel="noopener">https://www.nature.com/articles/nature14539</a></p>
 </blockquote>
 <ul>
 <li>Conventional machine-learning techniques were limited in their ability to process natural data in their raw form. </li>
 <li>Representation learning is a set of methods that allows a machine to be fed with raw data and to automatically discover the representations needed for detection or classification. </li>
 <li><a href="https://blog.csdn.net/weixin_38347387/article/details/82936585" target="_blank" rel="noopener">关于理解反向传播的一篇文章</a>  </li>
-<li>为什么要使用激活函数–》不使用激活函数的神经网络都是<strong>线性模型</strong>，只是输入线性组合的再输出。关于为何使用ReLU激活函数，文中的理由为“ReLU typically learns <strong>much faster</strong> in networks with many layers, allowing training of a deep supervised network without unsupervised pre-training”【Reference: Glorot, X., Bordes, A. &amp; Bengio. Y. Deep sparse rectifier neural networks. In Proc. 14th International Conference on Artificial Intelligence and Statistics 315–323 (2011). This paper showed that supervised training of very deep neural networks is much faster if the hidden layers are composed of ReLU.】<ul>
+<li>为什么要使用激活函数–》不使用激活函数的神经网络都是<strong>线性模型</strong>，只是输入线性组合的再输出。关于为何使用ReLU激活函数，文中的理由为“ReLU typically <strong>learns much faster</strong> in networks with many layers, allowing training of a deep supervised network without unsupervised pre-training”【Reference: Glorot, X., Bordes, A. &amp; Bengio. Y. Deep sparse rectifier neural networks. In Proc. 14th International Conference on Artificial Intelligence and Statistics 315–323 (2011). This paper showed that supervised training of very deep neural networks is much faster if the hidden layers are composed of ReLU.】<ul>
 <li>但是明显还有更深层次的原因：<ul>
 <li><a href="https://www.cnblogs.com/itmorn/p/11132494.html" target="_blank" rel="noopener">激活函数的理解1</a>        </li>
 <li><a href="https://www.cnblogs.com/missidiot/p/9378079.html" target="_blank" rel="noopener">激活函数的理解2</a>       </li>
@@ -418,15 +418,35 @@ height:50vh;
 </li>
 </ul>
 </li>
-<li>这里有个问题：CNN中的反向传播是如何进行的</li>
+<li>这里有个问题：CNN中的反向传播是如何进行的  <a href="https://blog.csdn.net/qq_16137569/article/details/81477906" target="_blank" rel="noopener">https://blog.csdn.net/qq_16137569/article/details/81477906</a></li>
 <li>Distributed representations and language processing 没太看懂，貌似是说词向量的问题</li>
 <li>为何LSTM比单纯的RNN在序列信息的处理上效果更好: RNN “Although their main purpose is to learn long-term dependencies, theoretical and empirical evidence shows that it is difficult to learn to store information for very long”【Bengio, Y., Simard, P. &amp; Frasconi, P. Learning long-term dependencies with gradient descent is difficult. IEEE Trans. Neural Networks 5, 157–166 (1994).】 –“To correct for that, one idea is to augment the network with an explicit memory. ”–》LSTM</li>
-<li>最后作者提到的是<strong>期待于无监督学习替代监督学习</strong>，毕竟人自身就是这么成长的，但是个人感觉这需要非常大量的数据作为支撑，可能需要十几年的数据量，而且不只是视频数据。</li>
+<li>最后作者提到的是<strong>期待无监督学习替代监督学习</strong>，毕竟人自身就是这么成长的，但是个人感觉这需要非常大量的数据作为支撑，可能需要十几年的数据量，而且不只是视频数据。</li>
+</ul>
+<h2 id="DBN"><a href="#DBN" class="headerlink" title="DBN"></a>DBN</h2><h3 id="2-1-深度学习前夜的里程碑"><a href="#2-1-深度学习前夜的里程碑" class="headerlink" title="2.1 深度学习前夜的里程碑"></a>2.1 深度学习前夜的里程碑</h3><blockquote>
+<p>Hinton, Geoffrey E., Simon Osindero, and Yee-Whye Teh. “A fast learning algorithm for deep belief nets.” Neural computation 18.7 (2006): 1527-1554.<br><a href="http://www.cs.toronto.edu/%7Ehinton/absps/ncfast.pdf" target="_blank" rel="noopener">http://www.cs.toronto.edu/%7Ehinton/absps/ncfast.pdf</a></p>
+</blockquote>
+<ul>
+<li><img src="https://img-blog.csdn.net/20161213124220124?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvYTgxOTgyNTI5NA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="网络结构"></li>
+<li>非常难得文章，还只是初步了解（20%）</li>
+<li>reference：<ul>
+<li><a href="笔记https://zhuanlan.zhihu.com/p/48191799">《A fast learning algorithm for deep belief nets》</a></li>
+<li><a href="https://blog.csdn.net/a819825294/article/details/53608141" target="_blank" rel="noopener">深度信念网络（DBN）</a></li>
+<li><a href="https://space.bilibili.com/97068901" target="_blank" rel="noopener">B站简介</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="2-2展示深度学习前景的里程碑"><a href="#2-2展示深度学习前景的里程碑" class="headerlink" title="2.2展示深度学习前景的里程碑"></a>2.2展示深度学习前景的里程碑</h3><blockquote>
+<p>Hinton, Geoffrey E., and Ruslan R. Salakhutdinov. “Reducing the dimensionality of data with neural networks.” Science 313.5786 (2006): 504-507.<br><a href="http://www.cs.toronto.edu/%7Ehinton/science.pdf" target="_blank" rel="noopener">http://www.cs.toronto.edu/%7Ehinton/science.pdf</a></p>
+</blockquote>
+<ul>
+<li>We describe an effective way of initializing the weights that allows deep autoencoder networks to learn low-dimensional codes that work much better than principal components analysis as a tool to reduce the dimensionality of data.</li>
+<li><a href="https://cloud.tencent.com/developer/article/1157274" target="_blank" rel="noopener">中文译文</a></li>
+<li>看了一下 这两篇论文都是关于DBN的，这一篇在前说的是训练，上一篇在后，引出了DBN</li>
 </ul>
 <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ol>
 <li><a href="https://github.com/floodsung/Deep-Learning-Papers-Reading-Roadmap" target="_blank" rel="noopener">https://github.com/floodsung/Deep-Learning-Papers-Reading-Roadmap</a></li>
 <li><a href="https://mp.weixin.qq.com/s/8cP3TIlE1IIzkawc69XOug" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/8cP3TIlE1IIzkawc69XOug</a></li>
-<li></li>
 </ol>
 
     </article>
@@ -436,7 +456,7 @@ height:50vh;
             <p>Author：<a href="https://fizzeryu.github.io">Changyu Li</a>
             <p>原文链接：<a href="https://fizzeryu.github.io/Deep-Learning-Study-Roadmap.html">https://fizzeryu.github.io/Deep-Learning-Study-Roadmap.html</a>
             <p>发表日期：<a href="https://fizzeryu.github.io/Deep-Learning-Study-Roadmap.html">February 1st 2020, 9:26:47 pm</a>
-            <p>更新日期：<a href="https://fizzeryu.github.io/Deep-Learning-Study-Roadmap.html">February 2nd 2020, 4:09:01 pm</a>
+            <p>更新日期：<a href="https://fizzeryu.github.io/Deep-Learning-Study-Roadmap.html">February 3rd 2020, 7:39:52 pm</a>
             <p>版权声明：本文采用<a rel="license noopener" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -565,7 +585,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#深度学习前夜的里程碑⭐⭐⭐⭐⭐"><span class="toc-number">1.</span> <span class="toc-text">深度学习前夜的里程碑⭐⭐⭐⭐⭐</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Reference"><span class="toc-number">2.</span> <span class="toc-text">Reference</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-Deep-Learning-Report"><span class="toc-number">1.</span> <span class="toc-text">1.1 Deep Learning Report</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DBN"><span class="toc-number">2.</span> <span class="toc-text">DBN</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-深度学习前夜的里程碑"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 深度学习前夜的里程碑</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2展示深度学习前景的里程碑"><span class="toc-number">2.2.</span> <span class="toc-text">2.2展示深度学习前景的里程碑</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Reference"><span class="toc-number">3.</span> <span class="toc-text">Reference</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -671,11 +691,11 @@ top:50vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="synthetic biology"><span class="iconfont-archer">&#xe606;</span>synthetic biology</span>
+        <span class="sidebar-tag-name" data-tags="Deep Learning"><span class="iconfont-archer">&#xe606;</span>Deep Learning</span>
     
         <span class="sidebar-tag-name" data-tags="论文阅读"><span class="iconfont-archer">&#xe606;</span>论文阅读</span>
     
-        <span class="sidebar-tag-name" data-tags="Deep Learning"><span class="iconfont-archer">&#xe606;</span>Deep Learning</span>
+        <span class="sidebar-tag-name" data-tags="synthetic biology"><span class="iconfont-archer">&#xe606;</span>synthetic biology</span>
     
         <span class="sidebar-tag-name" data-tags="hexo"><span class="iconfont-archer">&#xe606;</span>hexo</span>
     
