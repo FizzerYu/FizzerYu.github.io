@@ -11,7 +11,7 @@
 
 
 <head>
-    <meta charset="utf-8">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" >
     <meta name="author" content="Changyu Li">
     <meta name="renderer" content="webkit">
@@ -198,15 +198,25 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
     <!-- 百度统计  -->
     
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?https://hm.baidu.com/hm.js?4b66631576b78a23d81b5bad405cd438";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    
     <!-- 谷歌统计  -->
     
-<meta name="generator" content="Hexo 4.2.0"></head>
+<meta name="generator" content="Hexo 4.2.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
     
         <body class="post-body">
     
     
-<header class="header">
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
@@ -266,15 +276,15 @@ height:50vh;
                 
                     <div class= post-intro-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "论文阅读">论文阅读</a>
-    
         <a class="post-tag" href="javascript:void(0);" data-tags = "Deep Learning">Deep Learning</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "论文阅读">论文阅读</a>
     
 </div>
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">1.6k</span>Reading time: <span class="post-count reading-time">6 min</span></span>
+                        <span>Word count: <span class="post-count word-count">3.3k</span>Reading time: <span class="post-count reading-time">13 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -410,7 +420,7 @@ height:50vh;
 <li>Conventional machine-learning techniques were limited in their ability to process natural data in their raw form. </li>
 <li>Representation learning is a set of methods that allows a machine to be fed with raw data and to automatically discover the representations needed for detection or classification. </li>
 <li><a href="https://blog.csdn.net/weixin_38347387/article/details/82936585" target="_blank" rel="noopener">关于理解反向传播的一篇文章</a>  </li>
-<li>为什么要使用激活函数–》不使用激活函数的神经网络都是<strong>线性模型</strong>，只是输入线性组合的再输出。关于为何使用ReLU激活函数，文中的理由为“ReLU typically <strong>learns much faster</strong> in networks with many layers, allowing training of a deep supervised network without unsupervised pre-training”【Reference: Glorot, X., Bordes, A. &amp; Bengio. Y. Deep sparse rectifier neural networks. In Proc. 14th International Conference on Artificial Intelligence and Statistics 315–323 (2011). This paper showed that supervised training of very deep neural networks is much faster if the hidden layers are composed of ReLU.】<ul>
+<li>为什么要使用激活函数—》不使用激活函数的神经网络都是<strong>线性模型</strong>，只是输入线性组合的再输出。关于为何使用ReLU激活函数，文中的理由为“ReLU typically <strong>learns much faster</strong> in networks with many layers, allowing training of a deep supervised network without unsupervised pre-training”【Reference: Glorot, X., Bordes, A. &amp; Bengio. Y. Deep sparse rectifier neural networks. In Proc. 14th International Conference on Artificial Intelligence and Statistics 315–323 (2011). This paper showed that supervised training of very deep neural networks is much faster if the hidden layers are composed of ReLU.】<ul>
 <li>但是明显还有更深层次的原因：<ul>
 <li><a href="https://www.cnblogs.com/itmorn/p/11132494.html" target="_blank" rel="noopener">激活函数的理解1</a>        </li>
 <li><a href="https://www.cnblogs.com/missidiot/p/9378079.html" target="_blank" rel="noopener">激活函数的理解2</a>       </li>
@@ -420,7 +430,7 @@ height:50vh;
 </li>
 <li>这里有个问题：CNN中的反向传播是如何进行的  <a href="https://blog.csdn.net/qq_16137569/article/details/81477906" target="_blank" rel="noopener">https://blog.csdn.net/qq_16137569/article/details/81477906</a></li>
 <li>Distributed representations and language processing 没太看懂，貌似是说词向量的问题</li>
-<li>为何LSTM比单纯的RNN在序列信息的处理上效果更好: RNN “Although their main purpose is to learn long-term dependencies, theoretical and empirical evidence shows that it is difficult to learn to store information for very long”【Bengio, Y., Simard, P. &amp; Frasconi, P. Learning long-term dependencies with gradient descent is difficult. IEEE Trans. Neural Networks 5, 157–166 (1994).】 –“To correct for that, one idea is to augment the network with an explicit memory. ”–》LSTM</li>
+<li>为何LSTM比单纯的RNN在序列信息的处理上效果更好: RNN “Although their main purpose is to learn long-term dependencies, theoretical and empirical evidence shows that it is difficult to learn to store information for very long”【Bengio, Y., Simard, P. &amp; Frasconi, P. Learning long-term dependencies with gradient descent is difficult. IEEE Trans. Neural Networks 5, 157–166 (1994).】 —“To correct for that, one idea is to augment the network with an explicit memory. ”—》LSTM</li>
 <li>最后作者提到的是<strong>期待无监督学习替代监督学习</strong>，毕竟人自身就是这么成长的，但是个人感觉这需要非常大量的数据作为支撑，可能需要十几年的数据量，而且不只是视频数据。</li>
 </ul>
 <h2 id="2-DBN"><a href="#2-DBN" class="headerlink" title="2 DBN"></a>2 DBN</h2><h3 id="2-1-深度学习前夜的里程碑"><a href="#2-1-深度学习前夜的里程碑" class="headerlink" title="2.1 深度学习前夜的里程碑"></a>2.1 深度学习前夜的里程碑</h3><blockquote>
@@ -468,7 +478,7 @@ height:50vh;
 <li>使用了Relu激活函数，基于ReLU的深度卷积网络比基于tanh和sigmoid的网络训练快数倍（论文中有证明）</li>
 <li>使用了dropout（只在网络的最后的两个全连接层有使用），但是在训练阶段和测试阶段设置不同<ul>
 <li>在训练阶段：设置一个概率，以该概率随即屏蔽神经元（文章提到0.5，也就是在训练的时候每个神经元有50%的可能参与或不参与计算）。</li>
-<li>在测试阶段：把0.5改为0，然后需要把结果*0.5，因为求和会是之前的两倍！建立一个假设–在有dropout的网络中，每次输出都是不同的，那么“mean network”产生的结果会比 ，单独几个独立的dropout的网络结果的mean融合会更好！或者理解为：几个网络输出的average，这是ensemble常用的手段！这里的意思是，dropout网络相当于把网络每一层都mean了，每一层都是ensemble，那么理论上这样可能会比直接结果ensemble会更好！（事实也是如此）</li>
+<li>在测试阶段：把0.5改为0，然后需要把结果*0.5，因为求和会是之前的两倍！建立一个假设—在有dropout的网络中，每次输出都是不同的，那么“mean network”产生的结果会比 ，单独几个独立的dropout的网络结果的mean融合会更好！或者理解为：几个网络输出的average，这是ensemble常用的手段！这里的意思是，dropout网络相当于把网络每一层都mean了，每一层都是ensemble，那么理论上这样可能会比直接结果ensemble会更好！（事实也是如此）</li>
 </ul>
 </li>
 <li>数据扩充：1.图片平移或水平翻转 2.对RGB空间做PCA，然后对PAC做一个（0, 0.1）的高斯扰动，根据论文，就是对光照强度和颜色进行处理，保证网络不受光照强度和颜色变化的影响</li>
@@ -486,6 +496,106 @@ height:50vh;
 <h3 id="3-2-VGGNet深度神经网络出现"><a href="#3-2-VGGNet深度神经网络出现" class="headerlink" title="3.2 VGGNet深度神经网络出现"></a>3.2 VGGNet深度神经网络出现</h3><blockquote>
 <p>Simonyan, Karen, and Andrew Zisserman. “Very deep convolutional networks for large-scale image recognition.” arXiv preprint arXiv:1409.1556 (2014).<br><a href="https://arxiv.org/pdf/1409.1556.pdf" target="_blank" rel="noopener">https://arxiv.org/pdf/1409.1556.pdf</a></p>
 </blockquote>
+<ul>
+<li><a href="https://www.cnblogs.com/bigcindy/p/10688835.html" target="_blank" rel="noopener">中文翻译</a></li>
+<li><a href="https://www.aiuai.cn/aifarm138.html" target="_blank" rel="noopener">一篇很棒的解释文章</a>【该篇文章原作者<a href="http://yuenshome.cn/" target="_blank" rel="noopener">Yuens’s blog</a>暂时无法接通】</li>
+<li><a href="https://github.com/keras-team/keras-applications/blob/master/keras_applications/vgg16.py" target="_blank" rel="noopener">VGG16的keras实现代码</a></li>
+<li><a href="https://github.com/keras-team/keras-applications/blob/master/keras_applications/vgg19.py" target="_blank" rel="noopener">VGG19的keras实现代码</a></li>
+<li>论文中所采用的网络结构<img src="http://www-gageet-com-static.smartgslb.com/wp-content/uploads/2014/09/QQ%E6%88%AA%E5%9B%BE20140917104851.jpg" width="60%"></li>
+<li>上图所用的网络的参数数量（单位:Million）<img src="http://www.gageet.com/wp-content/uploads/2014/09/QQ%E6%88%AA%E5%9B%BE20140917110908.jpg" width="60%"><ul>
+<li>作者一共对比了六个网络的性能，上上图每一列代表一个网络，且从左至右网络逐渐加深（作者就是想对比不同的kernel尺寸和网络深度的影响），第二个网络的 LRN(Local Response Normalization) 在后续四个网络并没有用到，因为作者通过实验发现 LRN 在 ILSVRC dataset 上效果没有提升，反而增加了内存和时间消耗</li>
+<li>VGGNet的发现<ul>
+<li>LRN层无用增益（A和A-LRN）</li>
+<li>一定条件下，随着网络深度的增加，分类性能提高</li>
+<li>conv1x1的非线性变化有作用（C和D）</li>
+<li>一定条件下，多个小的卷积核比同等视野的单个大的卷积核性能好（B）</li>
+</ul>
+</li>
+<li>Localization问题：<ul>
+<li>使用的VGG16</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-3-GoogLeNet"><a href="#3-3-GoogLeNet" class="headerlink" title="3.3 GoogLeNet"></a>3.3 GoogLeNet</h3><blockquote>
+<p>Szegedy, Christian, et al. “Going deeper with convolutions.” Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2015.<br><a href="http://www.cv-foundation.org/openaccess/content_cvpr_2015/papers/Szegedy_Going_Deeper_With_2015_CVPR_paper.pdf" target="_blank" rel="noopener">http://www.cv-foundation.org/openaccess/content_cvpr_2015/papers/Szegedy_Going_Deeper_With_2015_CVPR_paper.pdf</a></p>
+</blockquote>
+<ul>
+<li><a href="https://www.jianshu.com/p/271a23f9ac5f" target="_blank" rel="noopener">中文翻译</a></li>
+<li>GoogLeNet怎么出来的？或者说Inception怎么出来的？感觉是作者某天阅读了<a href="https://arxiv.org/abs/1310.6343" target="_blank" rel="noopener">Provable bounds for learning some deep representations</a>这篇论文，意识到传统的提高深度神经网络性能的方法（例如 扩大训练集 或 扩大网络规模）不得行<ul>
+<li>小规模数据集容易使得网络过拟合，而高质量的大规模数据集又很难得到，例如区分 Siberian husky 和 Eskimo dog (论文中给的例子，其实是 西伯利亚哈士奇 和 爱斯基摩犬)</li>
+<li>增加网络尺寸会导致计算资源的的显著增加</li>
+</ul>
+</li>
+<li>解决这些问题的方法就是 “sparsely connected architectures” （显然缺点都是铺垫、铺垫~）。这个的理论基础就是 <a href="https://arxiv.org/abs/1310.6343" target="_blank" rel="noopener">Provable bounds for learning some deep representations</a> <blockquote>
+<p>Their main result states that if the probability distribution of the data-set is representable by a large, very sparse deep neural network, then the optimal network topology can be constructed layer by layer by analyzing the correlation statistics of the activations of the last layer and clustering neurons with highly correlated outputs.<br>他们的主要成果说明如果数据集的概率分布可以通过一个大的、稀疏的深度神经网络表示，则最优的网络拓扑结构可以通过分析前一层激活的相关性统计和聚类高度相关的神经元来一层层的构建。</p>
+<ul>
+<li><strong>卷积自身便具有稀疏性</strong>，所以效果好。同时AlexNet之后的网络大家的网络几乎就都是统一的结构（一条直线从上到下），那么作者开始思考”是否可以使用滤波器水平的稀疏性”，此时作者又发现有一些论文发现 <strong>“对于稀疏矩阵乘法，将稀疏矩阵聚类为相对密集的子矩阵会有更佳的性能”</strong>，那么此时答案就很明显了 <strong>“卷积”，”聚类”</strong></li>
+</ul>
+</blockquote>
+</li>
+<li>所以就构建了<strong>初始版本的Inception模块</strong> <img src="/Deep-Learning-Study-Roadmap/Inception-module,naive-version.png" width="60%"></li>
+<li>这里有个问题，<strong>参数爆炸</strong>，比如说Previous layer的输出为 28x28x192 ，如果使用96个 3x3convolutions，那么这里的参数就是 3x3x192x96+192(权重数量+偏置数量) (参考：<a href="https://blog.csdn.net/mynodex/article/details/101430452" target="_blank" rel="noopener">计算网络中的参数量(param)和浮点计算量(FLOPs)</a>)。如果后面每层都这样子的话参数超级大，所以最好缩减参数。问题根源是 Previous layer 的卷积层数量太多，但是肯定不能减少 Previous layer 的卷积层数量。可替代的方法是加 1x1convolutions 先减少卷积层数量（或者说降低前一层的维度,当然论文也提到了 1x1convolutions 里的rectified linear activation也有好处）。</li>
+<li>以inception(3a) (GoogLeNet中的一个inception名称，见下下图) 为例计算一下缩减的参数数量<img src="/Deep-Learning-Study-Roadmap/googlenet-count.png" width="100%"></li>
+<li>因而更新版的<strong>缩减参数的Inception模块</strong> <img src="/Deep-Learning-Study-Roadmap/inception-module-with-dimension-reductions.png" width="60%"></li>
+<li>auxiliary classifiers:GoogLeNet网络仅计算带有参数的层时是22层(如果还计算池化层的话，则是27层)。直接训练容易出现梯度消失问题，因而加了两个auxiliary classifiers结构（图中的红色方框区域）。在训练过程中，auxiliary classifiers的损失以0.3的权重加到网络的整个损失上。在推断时，这些辅助网络被丢弃。<ul>
+<li><img src="/Deep-Learning-Study-Roadmap/googlenet-architecture-image.png" width="100%"></li>
+</ul>
+</li>
+<li><p>所以以下为完整版的GoogLeNet的网络结构（”＃3×3reduce”和”＃5×5reduce”表示在3×3和5×5卷积之前，使用的降维层中的1×1卷积的数量，”pool proj”表示3x3maxpooling之后，使用的1x1卷积数量）<img src="/Deep-Learning-Study-Roadmap/googlenet-architecture.png" width="100%"></p>
+</li>
+<li><p>reference:</p>
+<ul>
+<li><a href="https://www.aiuai.cn/aifarm138.html" target="_blank" rel="noopener">https://www.aiuai.cn/aifarm138.html</a></li>
+<li><a href="http://www.gageet.com/2014/09178.php" target="_blank" rel="noopener">http://www.gageet.com/2014/09178.php</a></li>
+<li><a href="https://www.jianshu.com/p/a2ad00eddbd5" target="_blank" rel="noopener">https://www.jianshu.com/p/a2ad00eddbd5</a></li>
+<li><a href="https://www.jianshu.com/p/271a23f9ac5f" target="_blank" rel="noopener">https://www.jianshu.com/p/271a23f9ac5f</a></li>
+<li><a href="https://blog.csdn.net/mynodex/article/details/101430452" target="_blank" rel="noopener">https://blog.csdn.net/mynodex/article/details/101430452</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="3-4-ResNet极深度神经网络"><a href="#3-4-ResNet极深度神经网络" class="headerlink" title="3.4 ResNet极深度神经网络"></a>3.4 ResNet极深度神经网络</h3><blockquote>
+<p>He, Kaiming, et al. “Deep residual learning for image recognition.” arXiv preprint arXiv:1512.03385 (2015).<br><a href="https://arxiv.org/pdf/1512.03385.pdf" target="_blank" rel="noopener">https://arxiv.org/pdf/1512.03385.pdf</a></p>
+<p>从这一篇paper开始，我希望能够从一个易于接受的逻辑记录文献阅读，即：</p>
+<ul>
+<li>What’s the problem we need to solve?</li>
+<li>What is the solution?</li>
+<li>Why this solution works?</li>
+</ul>
+</blockquote>
+<h4 id="what-problem"><a href="#what-problem" class="headerlink" title="what problem?"></a>what problem?</h4><ul>
+<li>Deep is better 到底对不对<ul>
+<li>如果考虑的是梯度消失/爆炸问题，论文说了这个问题几乎已经被”规范化初始化和中间归一化层(normalized initialization and intermediate normalization layers)”解决了</li>
+<li>貌似问题解决了，但是测试一下，发现并非如此，而且该问题产生的原因还不是过拟合导致的（训练误差相对测试误差没有太大区别）<img src="https://pic2.zhimg.com/80/v2-dcf5688dad675cbe8fb8be243af5e1fd_hd.jpg" width="100%"></li>
+<li>如果我们把浅层神经网络看成是深层神经网络的一个子集的话，那么最坏的结果是深层神经网络和浅层神经网络的效果一样（也就是其他部分非子集部分的作用只是简单的1-&gt;1映射），至少结果不会更差。这个结论和上图的结论并不一致，说明现有的神经网络结构并没有达到预期效果。<blockquote>
+<p>Let us consider a shallower architecture and its deeper counterpart that adds more layers onto it. There exists a solution by construction to the deeper model: the added layers are identity mapping, and the other layers are copied from the learned shallower model.The existence of this constructed solution indicates that a deeper model should produce no higher training error than its shallower counterpart.</p>
+</blockquote>
+</li>
+<li>那么我们的问题就成了：<strong>如何让深层神经网络有着不输浅层神经网络的性能呢？</strong></li>
+</ul>
+</li>
+</ul>
+<h4 id="What-is-the-solution"><a href="#What-is-the-solution" class="headerlink" title="What is the solution?"></a>What is the solution?</h4><ul>
+<li><img src="/Deep-Learning-Study-Roadmap/residual learning.png" width="60%"></li>
+<li>这里有一个问题，即如果跳层连接时维度不同不可以直接相加怎么办，三个方案：<ul>
+<li>zero-padding shortcut（全0填充）来增加维度，所有的shortcut都没有参数</li>
+<li>projection shortcuts来增加维度（维度不一致时使用），其他的shortcut都是identity（恒等映射）</li>
+<li>所有的shortcut都使用projection shortcuts</li>
+<li>备注：Identity shortcuts(直接进行同纬度的元素级相加)，论文还研究了Projection shortcuts()</li>
+<li>$a=b+C$<h4 id="Why-this-solution-works"><a href="#Why-this-solution-works" class="headerlink" title="Why this solution works?"></a>Why this solution works?</h4></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>reference:<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/31852747" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/31852747</a></li>
+<li><a href="https://blog.csdn.net/lanran2/article/details/79057994" target="_blank" rel="noopener">https://blog.csdn.net/lanran2/article/details/79057994</a></li>
+<li><a href="https://blog.csdn.net/csdnldp/article/details/78313087" target="_blank" rel="noopener">https://blog.csdn.net/csdnldp/article/details/78313087</a></li>
+<li><a href="https://blog.csdn.net/qq_25491201/article/details/78405549" target="_blank" rel="noopener">https://blog.csdn.net/qq_25491201/article/details/78405549</a></li>
+</ul>
+</li>
+</ul>
 <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ol>
 <li><a href="https://github.com/floodsung/Deep-Learning-Papers-Reading-Roadmap" target="_blank" rel="noopener">https://github.com/floodsung/Deep-Learning-Papers-Reading-Roadmap</a></li>
 <li><a href="https://mp.weixin.qq.com/s/8cP3TIlE1IIzkawc69XOug" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/8cP3TIlE1IIzkawc69XOug</a></li>
@@ -498,13 +608,18 @@ height:50vh;
             <p>Author：<a href="https://fizzeryu.github.io">Changyu Li</a>
             <p>原文链接：<a href="https://fizzeryu.github.io/Deep-Learning-Study-Roadmap.html">https://fizzeryu.github.io/Deep-Learning-Study-Roadmap.html</a>
             <p>发表日期：<a href="https://fizzeryu.github.io/Deep-Learning-Study-Roadmap.html">February 1st 2020, 9:26:47 pm</a>
-            <p>更新日期：<a href="https://fizzeryu.github.io/Deep-Learning-Study-Roadmap.html">February 4th 2020, 4:40:19 pm</a>
+            <p>更新日期：<a href="https://fizzeryu.github.io/Deep-Learning-Study-Roadmap.html">February 7th 2020, 9:51:06 pm</a>
             <p>版权声明：本文采用<a rel="license noopener" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
     <!-- paginator  -->
     <ul class="post-paginator">
         <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href= "/markdown%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95.html" title= "markdown常用语法">
+                    <div class="nextTitle">markdown常用语法</div>
+                </a>
             
         </li>
         <li class="previous">
@@ -627,7 +742,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Deep-Learning-Report"><span class="toc-number">1.</span> <span class="toc-text">1 Deep Learning Report</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-DBN"><span class="toc-number">2.</span> <span class="toc-text">2 DBN</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-深度学习前夜的里程碑"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 深度学习前夜的里程碑</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-展示深度学习前景的里程碑"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 展示深度学习前景的里程碑</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-ImageNet革命（深度学习大爆炸）"><span class="toc-number">3.</span> <span class="toc-text">3 ImageNet革命（深度学习大爆炸）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-AlexNet的深度学习突破"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 AlexNet的深度学习突破</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-VGGNet深度神经网络出现"><span class="toc-number">3.2.</span> <span class="toc-text">3.2 VGGNet深度神经网络出现</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Reference"><span class="toc-number">4.</span> <span class="toc-text">Reference</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Deep-Learning-Report"><span class="toc-number">1.</span> <span class="toc-text">1 Deep Learning Report</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-DBN"><span class="toc-number">2.</span> <span class="toc-text">2 DBN</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-深度学习前夜的里程碑"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 深度学习前夜的里程碑</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-展示深度学习前景的里程碑"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 展示深度学习前景的里程碑</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-ImageNet革命（深度学习大爆炸）"><span class="toc-number">3.</span> <span class="toc-text">3 ImageNet革命（深度学习大爆炸）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-AlexNet的深度学习突破"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 AlexNet的深度学习突破</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-VGGNet深度神经网络出现"><span class="toc-number">3.2.</span> <span class="toc-text">3.2 VGGNet深度神经网络出现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-GoogLeNet"><span class="toc-number">3.3.</span> <span class="toc-text">3.3 GoogLeNet</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-ResNet极深度神经网络"><span class="toc-number">3.4.</span> <span class="toc-text">3.4 ResNet极深度神经网络</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#what-problem"><span class="toc-number">3.4.1.</span> <span class="toc-text">what problem?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#What-is-the-solution"><span class="toc-number">3.4.2.</span> <span class="toc-text">What is the solution?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Why-this-solution-works"><span class="toc-number">3.4.3.</span> <span class="toc-text">Why this solution works?</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Reference"><span class="toc-number">4.</span> <span class="toc-text">Reference</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -689,9 +804,16 @@ top:50vh;
     
     
     
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 5
+        Total : 6
         </div>
         <!-- search  -->
         
@@ -704,6 +826,11 @@ top:50vh;
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/04</span><a class="archive-post-title" href= "/markdown%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95.html" >markdown常用语法</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -735,13 +862,13 @@ top:50vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="synthetic biology"><span class="iconfont-archer">&#xe606;</span>synthetic biology</span>
+        <span class="sidebar-tag-name" data-tags="Deep Learning"><span class="iconfont-archer">&#xe606;</span>Deep Learning</span>
     
         <span class="sidebar-tag-name" data-tags="论文阅读"><span class="iconfont-archer">&#xe606;</span>论文阅读</span>
     
-        <span class="sidebar-tag-name" data-tags="Deep Learning"><span class="iconfont-archer">&#xe606;</span>Deep Learning</span>
-    
         <span class="sidebar-tag-name" data-tags="hexo"><span class="iconfont-archer">&#xe606;</span>hexo</span>
+    
+        <span class="sidebar-tag-name" data-tags="synthetic biology"><span class="iconfont-archer">&#xe606;</span>synthetic biology</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
@@ -809,7 +936,7 @@ jsonContent:
     </div>
     <!-- async load share.js -->
     
-        <script src="/scripts/share.js" async></script>    
+        <script src="/scripts/share.js" async></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->    
      
     </body>
 </html>
