@@ -284,7 +284,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">3.3k</span>Reading time: <span class="post-count reading-time">13 min</span></span>
+                        <span>Word count: <span class="post-count word-count">4k</span>Reading time: <span class="post-count reading-time">16 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -568,7 +568,7 @@ height:50vh;
 <li>Deep is better 到底对不对<ul>
 <li>如果考虑的是梯度消失/爆炸问题，论文说了这个问题几乎已经被”规范化初始化和中间归一化层(normalized initialization and intermediate normalization layers)”解决了</li>
 <li>貌似问题解决了，但是测试一下，发现并非如此，而且该问题产生的原因还不是过拟合导致的（训练误差相对测试误差没有太大区别）<img src="https://pic2.zhimg.com/80/v2-dcf5688dad675cbe8fb8be243af5e1fd_hd.jpg" width="100%"></li>
-<li>如果我们把浅层神经网络看成是深层神经网络的一个子集的话，那么最坏的结果是深层神经网络和浅层神经网络的效果一样（也就是其他部分非子集部分的作用只是简单的1-&gt;1映射），至少结果不会更差。这个结论和上图的结论并不一致，说明现有的神经网络结构并没有达到预期效果。<blockquote>
+<li>如果我们把浅层神经网络看成是深层神经网络的一个子集的话，那么最坏的结果是深层神经网络和浅层神经网络的效果一样（也就是其他部分，即非子集部分的作用只是简单的1-&gt;1映射），至少结果不会更差。这个结论和上图的结论并不一致，说明现有的神经网络结构并没有达到预期效果。<blockquote>
 <p>Let us consider a shallower architecture and its deeper counterpart that adds more layers onto it. There exists a solution by construction to the deeper model: the added layers are identity mapping, and the other layers are copied from the learned shallower model.The existence of this constructed solution indicates that a deeper model should produce no higher training error than its shallower counterpart.</p>
 </blockquote>
 </li>
@@ -578,18 +578,35 @@ height:50vh;
 </ul>
 <h4 id="What-is-the-solution"><a href="#What-is-the-solution" class="headerlink" title="What is the solution?"></a>What is the solution?</h4><ul>
 <li><img src="/Deep-Learning-Study-Roadmap/residual learning.png" width="60%"></li>
-<li>这里有一个问题，即如果跳层连接时维度不同不可以直接相加怎么办，三个方案：<ul>
-<li>zero-padding shortcut（全0填充）来增加维度，所有的shortcut都没有参数</li>
-<li>projection shortcuts来增加维度（维度不一致时使用），其他的shortcut都是identity（恒等映射）</li>
-<li>所有的shortcut都使用projection shortcuts</li>
-<li>备注：Identity shortcuts(直接进行同纬度的元素级相加)，论文还研究了Projection shortcuts()</li>
-<li>$a=b+C$<h4 id="Why-this-solution-works"><a href="#Why-this-solution-works" class="headerlink" title="Why this solution works?"></a>Why this solution works?</h4></li>
+<li>这里有一个问题，即如果<strong>跳层连接时维度不同</strong>不可以直接相加怎么办，三个方案：<ul>
+<li>(A)zero-padding shortcut（全0填充）来增加维度，所有的shortcut都没有参数</li>
+<li>(B)projection shortcuts来增加维度（维度不一致时使用），其他的shortcut都是identity（恒等映射）</li>
+<li>(C)所有的shortcut都使用projection shortcuts</li>
+<li>备注：Identity shortcuts(直接进行同纬度的元素级相加，即$y = F(x, \lbrace{W_i}\rbrace) + x$)，论文还研究了Projection shortcuts(即$y = F(x, \lbrace{W_i}\rbrace) + {W_s}x$)</li>
+<li>三种方法对网络的性能有什么影响<img src="/Deep-Learning-Study-Roadmap/resnet-error-rates.png" width="60%"><ul>
+<li>表3显示，这三个网络都比普通网络(plain-34)好得多。B比A稍微好一点，作者认为这是因为A的零填充维度确实没有residual学习。C比B稍微好一点，作者把这归因于许多(13个)Projection shortcuts引入的额外参数。但是，A/B/C之间的小差异表明，Projection shortcuts不是解决退化问题的关键。因此，在论文的其余部分，将不使用选项C来降低内存/时间复杂度和模型大小。Identity shortcuts方式对于不增加下面介绍的Deeper Bottleneck Architectures(深度瓶颈体系结构)的复杂性尤其重要。</li>
 </ul>
 </li>
+</ul>
+</li>
+<li>下一个问题，<strong>跳层之间的结构怎么样设计？</strong><ul>
+<li><img src="/Deep-Learning-Study-Roadmap/resnet-block.png" width="60%">           <ul>
+<li>这三个层分别是1x1、3x3和1x1卷积，其中1x1个层负责减少然后增加(恢复)维度，使3x3层成为输入/输出维度更小的bottleneck。</li>
+<li>无参数标识快捷方式对于瓶颈体系结构尤其重要。如果将图5(右)中的Identity shortcuts替换为Projection shortcuts，可以看出，由于Identity shortcuts到两个高维末端，时间复杂度和模型大小都增加了一倍。因此，Identity shortcuts为bottleneck设计带来了更有效的模型。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="Why-this-solution-works"><a href="#Why-this-solution-works" class="headerlink" title="Why this solution works?"></a>Why this solution works?</h4><ul>
+<li>这个问题很多人也都在讨论，但是个人感觉这篇论文也没有说清楚，还需要看一下其他论文</li>
+<li>考虑一个由几个卷积(不一定是整个网络)堆叠而成的block，$x$表示这个block的输入，$F(x)$表示这个网络目前的映射，$H(x)$表示这个网络的理论最优映射。如果假设block(多个非线性层)能够拟合complicated functions (即 $F(x)=H(x)$) ，那么我们也可以同样地假设它们能够拟合residual functions，(即 $F(x)=H(x)−x$ (假设输入和输出的维数相同))。这两种都可以使用端到端的方法来训练（比如SGD）</li>
+<li>作者认为训练 $F(x)=H(x)−x$ 比训练 $F(x)=H(x)$ 要简单，或者说为了使得深度神经网络有着与浅层神经网络一样或者相近的性能（也就是其他部分，即非子集部分的作用只是简单的1-&gt;1映射），这种shortcut就类似于已经完成了这样的1-&gt;1映射，所以更加容易。当然我觉得实际肯定不是这么简单😥，这里有一篇blog待看 <a href="https://zhuanlan.zhihu.com/p/42440883" target="_blank" rel="noopener">zhihu的一篇blog</a>。</li>
 </ul>
 <ul>
 <li>reference:<ul>
 <li><a href="https://zhuanlan.zhihu.com/p/31852747" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/31852747</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/42440883" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/42440883</a></li>
 <li><a href="https://blog.csdn.net/lanran2/article/details/79057994" target="_blank" rel="noopener">https://blog.csdn.net/lanran2/article/details/79057994</a></li>
 <li><a href="https://blog.csdn.net/csdnldp/article/details/78313087" target="_blank" rel="noopener">https://blog.csdn.net/csdnldp/article/details/78313087</a></li>
 <li><a href="https://blog.csdn.net/qq_25491201/article/details/78405549" target="_blank" rel="noopener">https://blog.csdn.net/qq_25491201/article/details/78405549</a></li>
@@ -608,7 +625,7 @@ height:50vh;
             <p>Author：<a href="https://fizzeryu.github.io">Changyu Li</a>
             <p>原文链接：<a href="https://fizzeryu.github.io/Deep-Learning-Study-Roadmap.html">https://fizzeryu.github.io/Deep-Learning-Study-Roadmap.html</a>
             <p>发表日期：<a href="https://fizzeryu.github.io/Deep-Learning-Study-Roadmap.html">February 1st 2020, 9:26:47 pm</a>
-            <p>更新日期：<a href="https://fizzeryu.github.io/Deep-Learning-Study-Roadmap.html">February 7th 2020, 9:51:06 pm</a>
+            <p>更新日期：<a href="https://fizzeryu.github.io/Deep-Learning-Study-Roadmap.html">February 8th 2020, 12:10:45 pm</a>
             <p>版权声明：本文采用<a rel="license noopener" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -809,6 +826,10 @@ top:50vh;
     
     
     
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 6
@@ -860,11 +881,11 @@ top:50vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="hexo"><span class="iconfont-archer">&#xe606;</span>hexo</span>
-    
         <span class="sidebar-tag-name" data-tags="Deep Learning"><span class="iconfont-archer">&#xe606;</span>Deep Learning</span>
     
         <span class="sidebar-tag-name" data-tags="论文阅读"><span class="iconfont-archer">&#xe606;</span>论文阅读</span>
+    
+        <span class="sidebar-tag-name" data-tags="hexo"><span class="iconfont-archer">&#xe606;</span>hexo</span>
     
         <span class="sidebar-tag-name" data-tags="synthetic biology"><span class="iconfont-archer">&#xe606;</span>synthetic biology</span>
     
