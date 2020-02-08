@@ -202,7 +202,7 @@
         var _hmt = _hmt || [];
         (function () {
         var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?https://hm.baidu.com/hm.js?4b66631576b78a23d81b5bad405cd438";
+        hm.src = "https://hm.baidu.com/hm.js?4b66631576b78a23d81b5bad405cd438";
         var s = document.getElementsByTagName("script")[0];
         s.parentNode.insertBefore(hm, s);
         })();
@@ -614,8 +614,6 @@ top:50vh;
     
     
     
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 6
@@ -667,11 +665,11 @@ top:50vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
+        <span class="sidebar-tag-name" data-tags="hexo"><span class="iconfont-archer">&#xe606;</span>hexo</span>
+    
         <span class="sidebar-tag-name" data-tags="Deep Learning"><span class="iconfont-archer">&#xe606;</span>Deep Learning</span>
     
         <span class="sidebar-tag-name" data-tags="论文阅读"><span class="iconfont-archer">&#xe606;</span>论文阅读</span>
-    
-        <span class="sidebar-tag-name" data-tags="hexo"><span class="iconfont-archer">&#xe606;</span>hexo</span>
     
         <span class="sidebar-tag-name" data-tags="synthetic biology"><span class="iconfont-archer">&#xe606;</span>synthetic biology</span>
     
@@ -741,9 +739,25 @@ jsonContent:
     </div>
     <!-- async load share.js -->
     
-        <script src="/scripts/share.js" async></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->    
+        <script src="/scripts/share.js" async></script>    
      
-    </body>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML
+"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
 </html>
 
 
